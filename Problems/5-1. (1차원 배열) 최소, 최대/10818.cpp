@@ -14,49 +14,30 @@ N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.
 
 #include <iostream>
 
-struct value {
-	int max;
-	int min;
-	
-};
-
-struct value max_and_min(int *arr) {
-	struct value value;
-	int min(*arr), max(*arr);
-	while (arr) {
-		if (*arr > max) {
-			max = *arr;
-		}
-		if (*arr < min) {
-			min = *arr;
-		}
-	}
-	value.max = max;
-	value.min = min;
-	return value;
-}
+using namespace std;
 
 int main() {
-	int N;
-	std::cin >> N;
 
-	int  *arr;
-	if (N >= 1 && N <= 1000000) {
-		arr = (int *)malloc(sizeof(int) *N);
-		while (arr) {
-			std::cin >> *arr;
-			if (*arr >= -1000000 && *arr <= 1000000) {
-				arr++;
-			}
+	int n;
+	cin >> n;
+
+	int num[n + 1];
+	int min = 1000000;
+	int max = -1000000;
+
+	for (int i = 0; i < n; i++) {
+		cin >> num[i];
+		if (min > num[i]) {
+			min = num[i];
 		}
-	
+		if (max < num[i]) {
+			max = num[i];
+		}
 	}
-	//struct value result = max_and_min(*ㅁㄱㄱ);
 
-	//std::cout << result.max << " " << result.min << std::endl;
-	
+	cout << min << " " << max << "\n";
 
-
-
+	return 0;
 }
+
 // 출처 : baekjoon
